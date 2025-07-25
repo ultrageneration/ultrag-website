@@ -330,7 +330,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(105deg, #FF99D2, #FF8CB8, #99BBFF);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   
@@ -372,7 +372,7 @@ body {
 .hero-content p {
   font-size: 1.2rem;
   color: #1e1e1e;
-  opacity: 80%;
+  opacity: 90%;
   margin-bottom: 2rem;
   font-family: 'Inter', sans-serif;
 }
@@ -517,7 +517,7 @@ body {
 .why-card {
   padding: 1.8rem;
   border-radius: 20px;
-  background: radial-gradient(circle at top left, #fff, #fcb69f, #ffe6e6, #fda085);
+  background: radial-gradient(circle at top left, #FFE3EA, #FFE3E3, #FFD6FC, #FFC2D7);
   background-size: 300% 300%;
   animation: gradientAnimation 10s ease infinite;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
