@@ -1,4 +1,3 @@
-<!-- partial:index.partial.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -489,16 +488,12 @@
     link.addEventListener('click', closeMenu)
   );
 </script>
-
-
-
-  
 <!-- Footer section -->
 <footer class="footer">
   <div class="footer-main">
     <div class="footer-top">
       <div class="footer-left">
-        <img src="https://ultra-generation.com/assets/img/ultrag-logo.png" alt="Ultra-G Logo" class="footer-logo" />
+        <a href="https://www.ultra-generation.com/"><img src="https://ultra-generation.com/assets/img/ultrag-logo.png" alt="Ultra-G Logo" class="footer-logo" /></a>
       </div>
 
       <ul class="footer-menu">
@@ -529,8 +524,30 @@
     <p>© 2025 — Copyright by Ultra-G. All Rights Reserved.</p>
   </div>
 </footer>
-
   
+<!-- Scroll to Top Button -->
+<button id="scrollToTop" aria-label="Scroll to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+<script>
+  const scrollBtn = document.getElementById('scrollToTop');
+
+  window.addEventListener('scroll', () => {
+    const firstSection = document.querySelector('section'); // assuming first section
+    if (window.scrollY > firstSection.offsetHeight) {
+      scrollBtn.style.display = 'flex';
+    } else {
+      scrollBtn.style.display = 'none';
+    }
+  });
+
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>  
 </body>
 </html>
 <!-- partial -->
