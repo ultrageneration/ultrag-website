@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ultra-G | UI/UX Experts</title>
+  <title>Ultra-G | Delivering User-Centric Solutions That Succeed</title>
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon.png"> 
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="script.js"></script>
 
 <style>
   body {
@@ -44,16 +45,18 @@
 
 
     <!-- Navigation Menu -->
- <ul class="nav-menu" id="nav-menu">
+    <ul class="nav-menu" id="nav-menu">
   <li><a href="#projects">Projects</a></li>
-  <li><a href="#services">Service</a></li>
+  <li><a href="#services">Services</a></li>
   <li><a href="#faq">FAQs</a></li>
-  <li><a href="#contact">Contact</a></li>
+  <li><a href="resources.html">Resources</a></li>
+  <li><a href="blog.html">Blog</a></li>
+  <!-- CTA -->
   <li><a href="#contact" class="btn-primary nav-button">Schedule a Call</a></li>
 </ul>
-
   </div>
 </nav>
+
 
 <!-- Hero Section -->
 <header class="hero">
@@ -152,7 +155,7 @@
       <!-- Card 1 -->
       <div class="why-card">
         <i class="fas fa-dollar-sign icon"></i>
-        <h3>Affordability</h3>
+        <h3>Efficient Excellence</h3>
         <p>High-quality work without breaking your budget. We provide cost-effective solutions.</p>
       </div>
 
@@ -368,7 +371,7 @@
           </div>
         </div>
       <p class="section-desc">
-        Check if you need immediate assistance, we typically respond within 1–2 business days.
+       We typically respond within 1–2 business days.
       </p>
       </div>
     </div>
@@ -386,107 +389,62 @@
         <label for="mobile">Mobile</label>
         <input type="tel" id="mobile" name="user_mobile" />
       </div>
-      <div class="form-group full">
-        <label for="message">Description*</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-
+      <div class="form-group">
+  <label for="service_type">Service Type *</label>
+  <select id="service_type" name="service_type" required>
+    <option value="">Select a service</option>
+    <option value="UI/UX Design">UI/UX Design</option>
+    <option value="App Design">App Design</option>
+    <option value="Business & E-commerce Website">Business & E-commerce Website</option>
+    <option value="Product Design">Product Design</option>
+    <option value="Brand Partnership">Brand Partnership</option>
+  </select>
+</div>
+      <div class="form-group">
+  <label for="business_type">Business Model *</label>
+  <select id="business_type" name="business_type" required>
+    <option value="">Select type</option>
+    <option value="B2B">B2B</option>
+    <option value="B2C">B2C</option>
+    <option value="Service Based">Service Based</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
+      <div class="form-group">
+  <label for="budget">Budget Range *</label>
+  <select id="budget" name="budget" required>
+    <option value="">Select budget</option>
+    <option value="SGD $1,000 - $5,000">SGD $1,000 - $5,000</option>
+    <option value="SGD $5,001 - $10,000">SGD $5,001 - $10,000</option>
+    <option value="SGD $10,000 and above">SGD $10,000 and above</option>
+    <option value="SGD Other">Others</option>
+  </select>
+</div>
+      <div class="form-group">
+  <label for="message">More details about the project (brief summary, deadline etc)*</label>
+  <textarea 
+    id="message" 
+    name="message" 
+    placeholder="Your message" 
+    required>
+  </textarea>
+</div>
       <!-- Google reCAPTCHA -->
       <div class="form-group full">
     <div class="g-recaptcha" data-sitekey="6LdJlYYrAAAAAGIu7HfrHikTf_jBADIbECu-RWLN"></div>
   </div>
-
+      <div class="form-group full checkbox-group">
+  <label class="checkbox-label">
+    <input type="checkbox" name="urgent" value="Immediate Assistance Needed">
+    Immediate Assistance Needed
+  </label>
+</div>
       <button type="submit" class="submit-btn" id="submit-btn">Submit</button>
     </form>
   </div>
-</section>
+</section> 
 
-  
-<!-- Toggle Logic For Accordion -->
-<script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const item = button.parentElement;
-      const isOpen = item.classList.contains('open');
 
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-
-      if (!isOpen) {
-        item.classList.add('open');
-      }
-    });
-  });
-</script>
-
-<script>
-  window.addEventListener('scroll', function () {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-</script>
-<!-- EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-<!-- Google reCAPTCHA -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<script>
-  (function () {
-    emailjs.init("MgYEzIVXQthVrfVBn");
-  })();
-
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const recaptcha = grecaptcha.getResponse();
-    if (!recaptcha) {
-      alert("Please complete the CAPTCHA");
-      return;
-    }
-
-    emailjs.sendForm('service_og620hh', 'template_j3zp6vh', this)
-      .then(() => {
-        alert('Message sent successfully!');
-        this.reset();
-        grecaptcha.reset(); // reset CAPTCHA
-      }, (error) => {
-        alert('Failed to send message. Please try again.');
-        console.error(error);
-      });
-  });
-</script>
-<!-- Toggle Hamburger Menu -->
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
-  const overlay = document.getElementById('overlay');
-
-  function closeMenu() {
-    navMenu.classList.remove('active');
-    hamburger.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', 'false');
-    overlay.classList.remove('active');
-  }
-
-  hamburger.addEventListener('click', () => {
-    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    overlay.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', !expanded);
-  });
-
-  overlay.addEventListener('click', closeMenu);
-
-  // Optional: Close menu when any nav link is clicked
-  document.querySelectorAll('#nav-menu a').forEach(link =>
-    link.addEventListener('click', closeMenu)
-  );
-</script>
 <!-- Footer section -->
 <footer class="footer">
   <div class="footer-main">
@@ -520,7 +478,7 @@
   </div>
 
   <div class="footer-bottom">
-    <p>© 2025 — Copyright by Ultra-G. All Rights Reserved.</p>
+    <p>© 2026 — Copyright by Ultra-G. All Rights Reserved.</p>
   </div>
 </footer>
   
@@ -528,25 +486,7 @@
 <button id="scrollToTop" aria-label="Scroll to top">
   <i class="fas fa-arrow-up"></i>
 </button>
-<script>
-  const scrollBtn = document.getElementById('scrollToTop');
-
-  window.addEventListener('scroll', () => {
-    const firstSection = document.querySelector('section'); // assuming first section
-    if (window.scrollY > firstSection.offsetHeight) {
-      scrollBtn.style.display = 'flex';
-    } else {
-      scrollBtn.style.display = 'none';
-    }
-  });
-
-  scrollBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-</script>  
+ 
 </body>
 </html>
 <!-- partial -->
