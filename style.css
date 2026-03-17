@@ -196,7 +196,6 @@ a {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
 /* Mobile Nav */
 @media (max-width: 768px) {
   .hamburger {
@@ -231,6 +230,20 @@ a {
     text-align: center;
     margin-top: 1rem;
   }
+  
+  @media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    display: none;
+    border: none;
+    box-shadow: none;
+    padding-left: 10px;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
 
   /* Overlay when menu is open */
   .overlay {
@@ -338,6 +351,16 @@ body {
   justify-content: center;
   color: white;
 }
+/*.hero {
+  background: linear-gradient(105deg, #FF99D2, #FF8CB8, #99BBFF);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  padding: 8rem 2rem;
+  text-align: center;
+  position: relative;
+}*/
+  /*background: radial-gradient(circle at top left, #f3f4f6, #e0e7ff, #fef2f2);*/
+
 /* Overlay to make text stand out */
 .hero-overlay {
   position: absolute;
@@ -366,10 +389,11 @@ body {
   }
 }
 
+
 .hero-title {
   font-size: 3rem;
   font-weight: 600;
-  color: #fff;
+  color: #fff; /*#111827*/
   font-family: 'Poppins', sans-serif;
   margin-bottom: 1rem;
 }
@@ -377,13 +401,13 @@ body {
 .hero-content h1 {
   font-size: 3rem;
   font-weight: 700;
-  color: #fff;
+  color: #fff; /*#111827*/
   margin-bottom: 1rem;
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  color: #fff;
+  color: #fff; /*#1e1e1e*/
   opacity: 90%;
   margin-bottom: 2rem;
   font-family: 'Inter', sans-serif;
@@ -977,6 +1001,23 @@ display: inline-block;
   color: #808080;
   text-decoration: none;
 }
+.checkbox-group {
+  margin: 10px 0 20px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
 
 .submit-btn {
   width: 100%;
@@ -994,6 +1035,16 @@ display: inline-block;
 
 .submit-btn:hover {
   background-color: #dc2626;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: #fff;
 }
 
 @media (max-width: 768px) {
