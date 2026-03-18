@@ -95,7 +95,6 @@ a {
   font-size: 1rem;
   max-width: 600px;
   margin: 0 auto;
-
 }
 .projects h2 {
   text-align: center;
@@ -820,6 +819,7 @@ display: inline-block;
 
 .contact-section .section-desc {
   max-width: 700px;
+  margin: 0 auto 10px;
   font-size: 1rem;
   color: #4b5563;
 }
@@ -928,8 +928,6 @@ display: inline-block;
   margin-bottom: 6px;
   color: #374151;
 }
-
-/* Get in Touch Form */
 
 .contact-form {
   flex: 1 1 45%;
