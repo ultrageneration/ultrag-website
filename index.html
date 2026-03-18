@@ -8,28 +8,24 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon.png"> 
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/assets/img/favicon.png">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="style.css" />
+  <!--link rel="stylesheet" href="style.css" /-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="script.js"></script>
-
 <style>
   body {
     font-family: 'Inter', sans-serif;
   }
 </style>
-
 </head>
+
 <body>
 <!-- Navigation Bar -->
 <nav class="navbar" id="navbar">
   <div class="container nav-container">
-    <a href="https://www.ultra-generation.com" class="nav-logo">
+    <a href="#home" class="nav-logo">
       <img src="https://ultra-generation.com/assets/img/Logo%20only%20color.png" alt="Ultra-G Logo">
     </a>
 
@@ -46,25 +42,27 @@
 
     <!-- Navigation Menu -->
     <ul class="nav-menu" id="nav-menu">
+      <li><a href="#home">Home</a></li>
   <li><a href="#projects">Projects</a></li>
   <li><a href="#services">Services</a></li>
   <li><a href="#faq">FAQs</a></li>
-  <li><a href="resources.html">Resources</a></li>
-  <li><a href="blog.html">Blog</a></li>
-  <!-- CTA -->
-  <li><a href="#contact" class="btn-primary nav-button">Schedule a Call</a></li>
+  <!--<li><a href="resources.html">Resources</a></li>
+  <li><a href="blog.html">Blog</a></li> -->
+      
+  <!-- CTA - Trigger Button-->
+      <li><a href="https://forms.gle/MxJfRYhyegvYQQ6DA" class="btn-primary nav-button" target="_blank" rel="noopener noreferrer">Schedule a Call</a></li>
 </ul>
   </div>
 </nav>
 
 
 <!-- Hero Section -->
-<header class="hero">
+<header class="hero" id="home">
   <div class="hero-overlay">
     <div class="container hero-content">
       <h1 class="hero-title">Tailored Solutions to <br> Elevate Your Vision</h1>
       <p>Delivering User-Centric Solutions That Succeed!</p>
-      <a href="#contact" class="btn-primary">Schedule a Call</a>
+      <a href="https://forms.gle/MxJfRYhyegvYQQ6DA" class="btn-primary" target="_blank" rel="noopener noreferrer">Schedule a Call</a>
     </div>
   </div>
 </header>
@@ -370,77 +368,11 @@
             <a href="tel:+959260567664">+959260567664</a>
           </div>
         </div>
-      <p class="section-desc">
+      <p>
        We typically respond within 1–2 business days.
       </p>
       </div>
     </div>
-
-    <form id="contact-form" class="contact-form">
-      <div class="form-group">
-        <label for="name">Full Name*</label>
-        <input type="text" id="name" name="user_name" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email*</label>
-        <input type="email" id="email" name="user_email" required />
-      </div>
-      <div class="form-group">
-        <label for="mobile">Mobile</label>
-        <input type="tel" id="mobile" name="user_mobile" />
-      </div>
-      <div class="form-group">
-  <label for="service_type">Service Type *</label>
-  <select id="service_type" name="service_type" required>
-    <option value="">Select a service</option>
-    <option value="UI/UX Design">UI/UX Design</option>
-    <option value="App Design">App Design</option>
-    <option value="Business & E-commerce Website">Business & E-commerce Website</option>
-    <option value="Product Design">Product Design</option>
-    <option value="Brand Partnership">Brand Partnership</option>
-  </select>
-</div>
-      <div class="form-group">
-  <label for="business_type">Business Model *</label>
-  <select id="business_type" name="business_type" required>
-    <option value="">Select type</option>
-    <option value="B2B">B2B</option>
-    <option value="B2C">B2C</option>
-    <option value="Service Based">Service Based</option>
-    <option value="Other">Other</option>
-  </select>
-</div>
-      <div class="form-group">
-  <label for="budget">Budget Range *</label>
-  <select id="budget" name="budget" required>
-    <option value="">Select budget</option>
-    <option value="SGD $1,000 - $5,000">SGD $1,000 - $5,000</option>
-    <option value="SGD $5,001 - $10,000">SGD $5,001 - $10,000</option>
-    <option value="SGD $10,000 and above">SGD $10,000 and above</option>
-    <option value="SGD Other">Others</option>
-  </select>
-</div>
-      <div class="form-group">
-  <label for="message">More details about the project (brief summary, deadline etc)*</label>
-  <textarea 
-    id="message" 
-    name="message" 
-    placeholder="Your message" 
-    required>
-  </textarea>
-</div>
-      <!-- Google reCAPTCHA -->
-      <div class="form-group full">
-    <div class="g-recaptcha" data-sitekey="6LdJlYYrAAAAAGIu7HfrHikTf_jBADIbECu-RWLN"></div>
-  </div>
-      <div class="form-group full checkbox-group">
-  <label class="checkbox-label">
-    <input type="checkbox" name="urgent" value="Immediate Assistance Needed">
-    Immediate Assistance Needed
-  </label>
-</div>
-      <button type="submit" class="submit-btn" id="submit-btn">Submit</button>
-    </form>
   </div>
 </section> 
 
@@ -454,10 +386,10 @@
       </div>
 
       <ul class="footer-menu">
+        <li><a href="#home">Home</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#faq">FAQs</a></li>
-        <li><a href="#contact">Contact</a></li>
         <li class="footer-email">
   <a href="mailto:ultrag.sols@gmail.com">ultrag.sols@gmail.com</a>
   <div class="mobile-icons">
@@ -472,7 +404,7 @@
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <a href="#contact" class="btn-primary">Schedule a Call</a>
+        <a href="https://forms.gle/MxJfRYhyegvYQQ6DA" class="btn-primary" target="_blank" rel="noopener noreferrer">Schedule a Call</a>
       </div>
     </div>
   </div>
@@ -489,5 +421,6 @@
 
 <!-- All Script Here -->
 <script src="./script.js"></script>
+
 </body>
 </html>
