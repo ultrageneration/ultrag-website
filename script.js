@@ -1,8 +1,5 @@
-
- // =========================
-  // FAQ TOGGLE LOGIC FOR ACCORDION
-  // =========================
-
+<!-- Toggle Logic For Accordion -->
+<script>
   document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
       const item = button.parentElement;
@@ -15,9 +12,9 @@
       }
     });
   });
-  // =========================
-  // NAVBAR SCROLL EFFECT
-  // =========================
+</script>
+
+<script>
   window.addEventListener('scroll', function () {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
@@ -26,10 +23,41 @@
       navbar.classList.remove('scrolled');
     }
   });
+</script>
 
-  // =========================
-  // HAMBURGER MENU
-  // =========================
+<!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<!-- Google reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+  (function () {
+    emailjs.init("MgYEzIVXQthVrfVBn");
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const recaptcha = grecaptcha.getResponse();
+    if (!recaptcha) {
+      alert("Please complete the CAPTCHA");
+      return;
+    }
+
+    emailjs.sendForm('service_og620hh', 'template_j3zp6vh', this)
+      .then(() => {
+        alert('Message sent successfully!');
+        this.reset();
+        grecaptcha.reset(); // reset CAPTCHA
+      }, (error) => {
+        alert('Failed to send message. Please try again.');
+        console.error(error);
+      });
+  });
+</script>
+<!-- Toggle Hamburger Menu -->
+<script>
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
   const overlay = document.getElementById('overlay');
@@ -41,43 +69,38 @@
     overlay.classList.remove('active');
   }
 
-  if (hamburger) {
-    hamburger.addEventListener('click', () => {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      overlay.classList.toggle('active');
-      hamburger.setAttribute('aria-expanded', !expanded);
-    });
-  }
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', !expanded);
+  });
 
-  if (overlay) {
-    overlay.addEventListener('click', closeMenu);
-  }
+  overlay.addEventListener('click', closeMenu);
 
+  // Optional: Close menu when any nav link is clicked
   document.querySelectorAll('#nav-menu a').forEach(link =>
     link.addEventListener('click', closeMenu)
   );
+</script>
 
-  // =========================
-  // SCROLL TO TOP
-  // =========================
+<script>
   const scrollBtn = document.getElementById('scrollToTop');
 
   window.addEventListener('scroll', () => {
-    const firstSection = document.querySelector('section');
-    if (firstSection && window.scrollY > firstSection.offsetHeight) {
+    const firstSection = document.querySelector('section'); // assuming first section
+    if (window.scrollY > firstSection.offsetHeight) {
       scrollBtn.style.display = 'flex';
     } else {
       scrollBtn.style.display = 'none';
     }
   });
 
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
-  }
+  });
+</script> 
